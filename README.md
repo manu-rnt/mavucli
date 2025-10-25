@@ -80,6 +80,8 @@ El CLI te pedirá:
    Se busca automáticamente un archivo `.yaml` o `.yml` en el directorio actual.
    Si no encuentra ninguno, mostrará un error.
 
+> El código generado se colocará dentro de una carpeta `output` en el mismo directorio donde esté tu archivo YAML.
+
 ---
 
 ### 📌 Ejemplo de uso
@@ -101,7 +103,7 @@ Elige 1, 2 o 3: 1
 🧩 Usando archivo: "openapi.yaml"
 ```
 
-El CLI generará automáticamente los **DTOs, servicios y controladores** definidos en tu OpenAPI.
+El CLI generará automáticamente los **DTOs, servicios y controladores** definidos en tu OpenAPI dentro de `./output`.
 
 ---
 
@@ -114,7 +116,8 @@ mavucli/
 ├─ conf/mavu-settings.cmd                                     # Configuración del CLI
 ├─ start.cmd                                                  # Inicializa el entorno del CLI
 ├─ mavu.cmd                                                   # Script principal del CLI
-└─ openapi.yaml                                               # Ejemplo de archivo OpenAPI
+├─ openapi.yaml                                               # Ejemplo de archivo OpenAPI
+└─ output/                                                    # Código generado
 ```
 
 ---
@@ -124,9 +127,7 @@ mavucli/
 * Java 17 debe estar disponible en el PATH.
 * El archivo OpenAPI debe estar en el mismo directorio donde ejecutás `mavu create-service`.
 * La selección del tipo de servicio actualmente se hace por número (1, 2 o 3).
+* El código generado se colocará en la carpeta `output` dentro del directorio del YAML.
 
 ---
 
-## 📄 Licencia
-
-MIT License
