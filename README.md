@@ -1,6 +1,3 @@
-# mavucli
-Herramienta de línea de comandos interactiva para crear rápidamente servicios API, demonio y batch a partir de especificaciones OpenAPI.
-
 # 🚀 MAVU CLI
 
 Herramienta de línea de comandos para generar servicios **API**, **Demonio** o **Batch** a partir de archivos **OpenAPI YAML**, de manera interactiva y rápida.
