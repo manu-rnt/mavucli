@@ -1,80 +1,93 @@
 # mavucli
 Herramienta de línea de comandos interactiva para crear rápidamente servicios API, demonio y batch a partir de especificaciones OpenAPI.
 
-# MAVU CLI
+# 🚀 MAVU CLI
 
-Herramienta de línea de comandos para generar servicios **API**, **demonio** o **batch** a partir de archivos **OpenAPI YAML** de manera interactiva.
+Herramienta de línea de comandos para generar servicios **API**, **Demonio** o **Batch** a partir de archivos **OpenAPI YAML**, de manera interactiva y rápida.
 
 ---
 
-## 🛠 Instalación
+## 🛠 Requisitos
 
-1. Clona el repositorio:
+* **Java 17** o superior
+  Verificá con:
+
+```bash
+java -version
+```
+
+* Windows CMD o PowerShell
+* (Opcional) Maven si querés compilar desde código fuente
+
+---
+
+## 📥 Instalación
+
+1. Cloná el repositorio:
 
 ```bash
 git clone https://github.com/tuusuario/mavucli.git
 cd mavucli
-Asegúrate de tener Java 8 o superior instalado:
+```
 
-bash
-Copiar código
-java -version
-Configura el CLI si es necesario (opcional):
+2. Revisá y configurá el CLI (archivo: `conf/mavu-settings.cmd`):
 
-bash
-Copiar código
-# Archivo de configuración por defecto: conf/mavu-settings.cmd
-# Aquí puedes ajustar:
-# - Ruta del JAR
-# - Tipo de servicio por defecto
-🚀 Uso del CLI
-Abre tu terminal (CMD o PowerShell) y ejecuta:
+* Ruta del JAR del generador
+* Tipo de servicio por defecto
+* Opciones de color y banner
 
-bash
-Copiar código
+---
+
+## 💻 Uso
+
+Iniciá el CLI con:
+
+```bash
 start.cmd
-Esto abrirá un entorno preparado para usar el CLI, con las variables configuradas.
+```
 
-Comandos principales
-mavu help
-Muestra la lista de comandos disponibles.
+Esto abre un entorno preparado para usar `mavu` con las variables de configuración listas.
 
-mavu version
-Muestra la versión del CLI.
+### Comandos principales
 
+* `mavu help` → Lista todos los comandos disponibles
+* `mavu version` → Muestra la versión del CLI
+* `mavu create-service` → Genera un nuevo servicio de manera interactiva
+
+---
+
+## 📝 Crear un servicio
+
+Ejecutá:
+
+```bash
 mavu create-service
-Genera un nuevo servicio de forma interactiva.
+```
 
-📝 Crear un servicio
-Ejecuta:
-
-bash
-Copiar código
-mavu create-service
 El CLI te pedirá:
 
-Nombre del servicio:
-Escribe un nombre para tu servicio, por ejemplo product-api.
+1. **Nombre del servicio**
+   Ejemplo: `product-api`
 
-Descripción del servicio:
-Escribe una breve descripción, por ejemplo Servicio API para gestión de productos.
+2. **Descripción del servicio**
+   Ejemplo: `Servicio API para gestión de productos`
 
-Tipo de servicio:
-Elige entre:
+3. **Tipo de servicio**
+   Elegí entre:
 
-API
+   * API
+   * Demonio
+   * Batch
 
-Demonio
+4. **Archivo OpenAPI YAML**
+   Se busca automáticamente un archivo `.yaml` o `.yml` en el directorio actual.
+   Si no encuentra ninguno, mostrará un error.
 
-Batch
+---
 
-Archivo OpenAPI YAML:
-El CLI buscará automáticamente un archivo .yaml o .yml en el directorio actual.
-Si no encuentra ninguno, mostrará un error.
+### 📌 Ejemplo de uso
 
-⚡ Ejemplo de uso
-bash
-Copiar código
+```bash
 C:\Desarrollo\mavucli> mavu create-service
 ################## Crear nuevo servicio ######################
 Nombre del servicio: product-api
@@ -89,11 +102,15 @@ Elige 1, 2 o 3: 1
    Descripcion: "Servicio API para gestión de productos"
 
 🧩 Usando archivo: "openapi.yaml"
-El CLI generará los DTOs, servicios y controladores definidos en tu archivo OpenAPI.
+```
 
-📂 Estructura de carpetas
-bash
-Copiar código
+El CLI generará automáticamente los **DTOs, servicios y controladores** definidos en tu OpenAPI.
+
+---
+
+## 📂 Estructura de carpetas
+
+```
 mavucli/
 │
 ├─ target/mavucli-1.0.0-SNAPSHOT-jar-with-dependencies.jar  # JAR del generador
@@ -101,10 +118,18 @@ mavucli/
 ├─ start.cmd                                                  # Inicializa el entorno del CLI
 ├─ mavu.cmd                                                   # Script principal del CLI
 └─ openapi.yaml                                               # Ejemplo de archivo OpenAPI
-⚠️ Notas
-El CLI requiere Java instalado y disponible en el PATH.
+```
 
-El archivo OpenAPI debe estar en el mismo directorio donde ejecutas mavu create-service.
+---
 
-Actualmente, la selección del tipo de servicio se realiza por número (1, 2 o 3).
-Futuras versiones podrían implementar selección interactiva con flechas.
+## ⚠️ Notas
+
+* Java 17 debe estar disponible en el PATH.
+* El archivo OpenAPI debe estar en el mismo directorio donde ejecutás `mavu create-service`.
+* La selección del tipo de servicio actualmente se hace por número (1, 2 o 3).
+
+---
+
+## 📄 Licencia
+
+MIT License
