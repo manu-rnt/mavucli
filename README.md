@@ -1,4 +1,4 @@
-# 🚀 MAVU CLI
+# 🚀 MAVU CLI - Generador de APIs, Demonios y Batch
 
 Herramienta de línea de comandos para generar servicios **API**, **Demonio** o **Batch** a partir de archivos **OpenAPI YAML**, de manera interactiva y rápida.
 
